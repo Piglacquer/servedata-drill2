@@ -80,7 +80,7 @@ const data = [
   }
 ]
 
-function getID(data, idNum) {
+function idCall(data, idNum) {
   for (let i = 0; i < data.length; i++) {
     if (data[i].id == idNum) {
       return data[i]
@@ -90,11 +90,11 @@ function getID(data, idNum) {
 }
 
 app.get("/", function(request, response) {
-  response.json(data)
+  response.json({data})
 })
 
 app.get("/:id", function(request, response) {
-  if (!getID(data, request.params.id)) {
+  if (!idCall(data, request.params.id)) {
     response.status(404)
     response.json({
         error: {
