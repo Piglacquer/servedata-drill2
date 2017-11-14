@@ -95,7 +95,7 @@ app.get("/", function(request, response) {
 
 app.get("/:id", function(request, response) {
   if (!getID(data, request.params.id)) {
-      response.status = 404
+      response.status(404)
       response.json({
           error: {
               "message": "No record found!"
