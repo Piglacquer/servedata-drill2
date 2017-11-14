@@ -81,7 +81,7 @@ const data = [
 ]
 
 function getID(data, idNum) {
-  for (let i = 0; i<data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (data[i].id == idNum) {
       return data[i]
     }
@@ -95,10 +95,10 @@ app.get("/", function(request, response) {
 
 app.get("/:id", function(request, response) {
   if (!getID(data, request.params.id)) {
-      response.status(404)
-      response.json({
-          error: {
-              "message": "No record found!"
+    response.status(404)
+    response.json({
+        error: {
+            "message": "No record found!"
           }
       })
     }
